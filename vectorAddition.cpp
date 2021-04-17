@@ -27,7 +27,7 @@ void calcDegrees(float mag1, float dir1, float mag2, float dir2) {
 		// Generates magnitude and direction of resultant vector
 		float mag3 = sqrt(pow(x3, 2) + pow(y3, 2));
 		float dir3 = atan(abs(y3) / abs(x3)) / degreesToRad;
-		dir3 = (x3 >= 0) ? (y3 >= 0) ? dir3 : 360 - dir3 : (y3 >= 0) ? 180 - dir3 : 270 - dir3;
+		dir3 = (x3 >= 0) ? (y3 >= 0) ? dir3 : 270 + dir3 : (y3 >= 0) ? 90 + dir3 : 180 + dir3;
 		cout << "\n       (Magnitude/Direction Form): " << mag3 << " < cos(" << dir3 << "), sin(" << dir3 << ") >";
 	} else
 	cout << "One or both angles is out of range! Required range is 0 <= angle < 360";
@@ -59,7 +59,7 @@ int main( int argc, char *argv[] ) {
 			cout << "Unknown argument " << option << ".";
 		}
 	} else if (argc == 3 || argc == 4 || argc == 5) {
-		cout << "Incorrect number of arguments.";
+		cout << "Incorrect number of arguments.\n";
 		printHelp();
 	} else if (argc == 6) {
 		if (std::string(argv[1]) == "-md") {
